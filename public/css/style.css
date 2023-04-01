@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+header .navBar{
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+main{
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.tableDefault thead th,
+.tableDefault tbody td{
+    border: solid 0.1rem black;
+    padding: 0.5rem;
+}
+.tableDefault thead th{
+    background-color: lightgray;
+}

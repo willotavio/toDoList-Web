@@ -3,24 +3,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Home</title>
 </head>
 <body>
     
-    <h1>To Do List</h1>
-    <table>
-        <thead>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>DeadLine</th>
-            <th>Status</th>
-        </thead>
-        <tbody id="tasksTable">
-            
-        </tbody>
-    </table>
+    <header>
+        <nav class="navBar">
+            <h2>To Do List</h2>
+        </nav>
+    </header>
 
+    <main>
+
+        <h1>Your List</h1>
+        <table class="tableDefault">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>DeadLine</th>
+                <th>Status</th>
+            </thead>
+            <tbody id="tasksTable">
+                
+            </tbody>
+        </table>
+
+    </main>
+    
 </body>
 
 <script src="js/Task.js"></script>
