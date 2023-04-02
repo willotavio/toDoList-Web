@@ -17,16 +17,33 @@ console.log(userList);
 const welcomeText = document.getElementById("welcomeText");
 welcomeText.innerHTML += " " + userList[0].getUserName() + "!";
 
-let taskTitle = document.getElementById("taskTitle")
-let taskDescription = document.getElementById("taskDescription")
-let taskDeadline = document.getElementById("taskDeadline")
+let taskTitle = document.getElementById("taskTitle");
+let taskDescription = document.getElementById("taskDescription");
+let taskDeadline = document.getElementById("taskDeadline");
+
+let emptyInputs = document.getElementById("emptyInputs");
 
 const addTaskButton = document.getElementById("addTaskButton")
 addTaskButton.addEventListener("click", () => {
-    user1.addTask(taskTitle.value, taskDescription.value, taskDeadline.value)
-    user1.printTasks();
-    clearInputs();
+    if(isInputFilled()){
+        user1.addTask(taskTitle.value, taskDescription.value, taskDeadline.value);
+        user1.printTasks();
+        clearInputs();
+        emptyInputs.innerHTML = "";
+    }
+    else{
+        emptyInputs.innerHTML = "Fill in all fields!";
+    }
 })
+
+function isInputFilled(){
+    if(taskTitle.value == "" || taskDescription.value == "" || taskDeadline.value == ""){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
 
 function clearInputs(){
     taskTitle.value = "";
