@@ -3,44 +3,82 @@
     padding: 0;
 }
 
+:root{
+    --backgroundColor: whitesmoke;
+}
+
 body{
     font-family: 'Trebuchet MS', sans-serif;
+    background-color: var(--backgroundColor);
+    color: crimson;
 }
 
 header .navBar{
     text-align: center;
-    background-color: black;
+    background-color: crimson;
     color: white;
+    font-size: 26px;
+    position: fixed;
+    width: 100%;
 }
 
 main{
     text-align: center;
-    padding: 1rem 0;
-}
-
-table{
-    text-align: center;
-    left: 50%;
-    top: 25%;
-    position: absolute;
-    transform: translateX(-50%);
-    margin: 10rem 0;
+    padding: 5rem 0;
 }
 
 .formAddTask{
     display: flex;
+    margin: 3em auto;
+    padding: 1rem;
     flex-direction: column;
+    background-color: white;
+    width: max-content;
+    border-radius: 0.3rem;
 }
 .formAddTask *{
     margin: 0.5rem auto;
     width: 15rem;
 }
+.formAddTask input{
+    height: 3rem;
+    font-size: 16px;
+    color: crimson;
+    border: none;
+    border-bottom: 0.1rem solid crimson;
+    text-align: center;
+}
+.formAddTask input[type=text]:focus{
+    outline: none;
+}
+.formAddTask input[type=text]::placeholder{
+    color: crimson;
+}
 
+
+.tableDefault{
+    text-align: center;
+    margin: 1rem auto;
+}
 .tableDefault thead th,
 .tableDefault tbody td{
-    border: solid 0.1rem black;
+    background-color: crimson;
+    color: white;
     padding: 0.5rem;
 }
 .tableDefault thead th{
-    background-color: lightgray;
+    background-color: crimson;
+}
+
+.buttonDefault{
+    width: 5rem;
+    height: 3rem;
+    background-color: crimson;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+}
+.buttonDefault:hover{
+    opacity: 80%;
 }
