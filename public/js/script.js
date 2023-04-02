@@ -27,7 +27,7 @@ const addTaskButton = document.getElementById("addTaskButton")
 addTaskButton.addEventListener("click", () => {
     if(isInputFilled()){
         user1.addTask(taskTitle.value, taskDescription.value, taskDeadline.value);
-        user1.printTasks();
+        user1.listTasks();
         clearInputs();
         emptyInputs.innerHTML = "";
     }

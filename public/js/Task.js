@@ -8,8 +8,8 @@ class Task{
     getTaskId(){
         return this._taskId;
     }
-    getTaskName(){
-        return this._taskName;
+    getTaskTitle(){
+        return this._taskTitle;
     }
     getTaskDescription(){
         return this._taskDescription;
@@ -21,8 +21,8 @@ class Task{
         return this._taskComplete;
     }
 
-    setTaskName(taskName){
-        this._taskName = taskName;
+    setTaskTitle(taskTitle){
+        this._taskTitle = taskTitle;
     }
     setTaskDescription(taskDescription){
         this._taskDescription = taskDescription;
