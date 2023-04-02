@@ -19,12 +19,12 @@
         <p id="welcomeText">Welcome</p>
 
         <h1>Add a Task</h1>
-        <div class="formAddTask">
+        <div class="formDefault formAddTask">
             <input type="text" id="taskTitle" placeholder="Title">
             <input type="text" id="taskDescription" placeholder="Description">
             <input type="date" id="taskDeadline" placeholder="DeadLine">
             <button class="buttonDefault" id="addTaskButton">Add Task</button>
-            <p id="emptyInputs"></p>
+            <p id="emptyAddInputs"></p>
         </div>
 
         <h1>Your List</h1>
@@ -41,6 +41,16 @@
                 
             </tbody>
         </table>
+
+        <h1>Update a Task</h1>
+        <div class="formDefault formUpdateTask">
+            <input type="text" id="newTaskId" placeholder="Id" disabled>
+            <input type="text" id="newTaskTitle" placeholder="Title">
+            <input type="text" id="newTaskDescription" placeholder="Description">
+            <input type="date" id="newTaskDeadline" placeholder="DeadLine">
+            <button class="buttonDefault" id="updateTaskButton">Update Task</button>
+            <p id="emptyUpdateInputs"></p>
+        </div>
 
     </main>
     

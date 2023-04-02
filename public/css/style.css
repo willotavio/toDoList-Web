@@ -27,7 +27,7 @@ main{
     padding: 5rem 0;
 }
 
-.formAddTask{
+.formDefault{
     display: flex;
     margin: 3em auto;
     padding: 1rem;
@@ -36,11 +36,11 @@ main{
     width: max-content;
     border-radius: 0.3rem;
 }
-.formAddTask *{
+.formDefault *{
     margin: 0.5rem auto;
     width: 15rem;
 }
-.formAddTask input{
+.formDefault input{
     height: 3rem;
     font-size: 16px;
     color: crimson;
@@ -48,13 +48,12 @@ main{
     border-bottom: 0.1rem solid crimson;
     text-align: center;
 }
-.formAddTask input[type=text]:focus{
+.formDefault input[type=text]:focus{
     outline: none;
 }
-.formAddTask input[type=text]::placeholder{
+.formDefault input[type=text]::placeholder{
     color: crimson;
 }
-
 
 .tableDefault{
     text-align: center;

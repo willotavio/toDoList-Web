@@ -45,6 +45,27 @@ class User{
         this._userTasks.push(task);
     }
 
+    editTask(taskId){
+        for(let i = 0; i < this._userTasks.length; i++){
+            if(this._userTasks[i].getTaskId() == taskId){
+                document.getElementById("newTaskId").value = this._userTasks[i].getTaskId();
+                document.getElementById("newTaskTitle").value = this._userTasks[i].getTaskTitle();
+                document.getElementById("newTaskDescription").value = this._userTasks[i].getTaskDescription();
+                document.getElementById("newTaskDeadline").value = this._userTasks[i].getTaskDeadline();    
+            }
+        }
+    }
+    updateTask(taskId, newTaskTitle, newTaskDescription, newTaskDeadline){
+        for(let i = 0; i < this._userTasks.length; i++){
+            if(this._userTasks[i].getTaskId() == taskId.value){
+                this._userTasks[i].setTaskTitle(newTaskTitle.value);
+                this._userTasks[i].setTaskDescription(newTaskDescription.value);
+                this._userTasks[i].setTaskDeadline(newTaskDeadline.value);
+            }
+        }
+    }
+
+
     deleteTask(taskId){
         let taskList = document.getElementById("tasksTable");
         for(let i = 0; i < this._userTasks.length; i++){
@@ -73,7 +94,7 @@ class User{
             descriptionCell.innerHTML = this._userTasks[i].getTaskDescription();
             deadlineCell.innerHTML = this._userTasks[i].getTaskDeadline();
             statusCell.innerHTML = this._userTasks[i].isTaskComplete();
-            actionsCell.innerHTML = "<button class='actionButton' id='deleteTaskButton' onclick='user1.deleteTask(" + this._userTasks[i].getTaskId() + ")'>Delete</button>";
+            actionsCell.innerHTML = "<button class='actionButton' id='editTaskButton' onclick='user1.editTask(" + this._userTasks[i].getTaskId() + ")'>Update</button><button class='actionButton' id='deleteTaskButton' onclick='user1.deleteTask(" + this._userTasks[i].getTaskId() + ")'>Delete</button>";
         }
     }
     
