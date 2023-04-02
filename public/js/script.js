@@ -1,27 +1,24 @@
-let lastId = 0;
+let lastUserId = 0;
 
-let task1 = new Task();
-task1.setTaskName("howtobasic");
-task1.setTaskDescription("maratonar howtobasic desde o inicio");
-task1.setTaskDeadline("01/04/2003");
+let user1 = new User();
+user1.setUserName("zeppeli");
+user1.setUserEmail("zeppzepp@gmail.com");
+user1.setUserPassword("zeps123");
+let user2 = new User();
+user2.setUserName("johnny");
+user2.setUserEmail("johhjohh@gmail.com");
+user2.setUserPassword("johh123");
 
-let task2 = new Task();
-task2.setTaskName("face");
-task2.setTaskDescription("mudar a cor do face");
-task2.setTaskDeadline("06/02/2012");
+let userList = [];
+userList.push(user1, user2);
 
-console.log(task1, task2);
+console.log(userList);
 
-let taskList = [task1, task2];
+const welcomeText = document.getElementById("welcomeText");
+welcomeText.innerHTML += " " + userList[0].getUserName() + "!";
 
-const tasksTable = document.getElementById("tasksTable")
-
-for(let i = 0; i < taskList.length; i++){
-    tasksTable.innerHTML += "<tr>" +
-    "<td>" + taskList[i].getTaskId() + "</td>" +
-    "<td>" + taskList[i].getTaskName() + "</td>" +
-    "<td>" + taskList[i].getTaskDescription() + "</td>" +
-    "<td>" + taskList[i].getTaskDeadline() + "</td>" +
-    "<td>" + taskList[i].isTaskComplete() + "</td>" +
-    "</tr>";
-}
+const addTask = document.getElementById("addTask")
+addTask.addEventListener("click", () => {
+    user1.addTask("howtobasic", "maratonar howtobasic desde o inicio", "02/04/2003")
+    user1.printTasks();
+})

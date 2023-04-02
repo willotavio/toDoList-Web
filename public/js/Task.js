@@ -1,11 +1,7 @@
 class Task{
     
-    constructor(taskName, taskDescription, taskDeadline){
-        this._taskId = lastId + 1;
-        lastId++;
-        this._taskName = taskName;
-        this._taskDescription = taskDescription;
-        this._taskDeadline = taskDeadline;
+    constructor(lastTaskId){
+        this._taskId = lastTaskId + 1;
         this._taskComplete = false;
     }
 
@@ -22,7 +18,7 @@ class Task{
         return this._taskDeadline;
     }
     isTaskComplete(){
-        return this._taskStatus;
+        return this._taskComplete;
     }
 
     setTaskName(taskName){
