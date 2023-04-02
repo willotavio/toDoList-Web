@@ -17,8 +17,11 @@ console.log(userList);
 const welcomeText = document.getElementById("welcomeText");
 welcomeText.innerHTML += " " + userList[0].getUserName() + "!";
 
-const addTask = document.getElementById("addTask")
-addTask.addEventListener("click", () => {
-    user1.addTask("howtobasic", "maratonar howtobasic desde o inicio", "02/04/2003")
+const addTaskButton = document.getElementById("addTaskButton")
+addTaskButton.addEventListener("click", () => {
+    let taskTitle = document.getElementById("taskTitle").value;
+    let taskDescription = document.getElementById("taskDescription").value;
+    let taskDeadline = document.getElementById("taskDeadline").value;
+    user1.addTask(taskTitle, taskDescription, taskDeadline)
     user1.printTasks();
 })

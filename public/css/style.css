@@ -24,6 +24,16 @@ table{
     top: 25%;
     position: absolute;
     transform: translateX(-50%);
+    margin: 10rem 0;
+}
+
+.formAddTask{
+    display: flex;
+    flex-direction: column;
+}
+.formAddTask *{
+    margin: 0.5rem auto;
+    width: 15rem;
 }
 
 .tableDefault thead th,
