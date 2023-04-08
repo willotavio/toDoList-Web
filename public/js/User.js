@@ -77,10 +77,35 @@ class User{
         console.log(this._userTasks);
     }
 
+    changeTaskStatus(taskId){
+        let tasks = this._userTasks
+        for(let i = 0; i < tasks.length; i++){
+            if(tasks[i].getTaskId() == taskId){
+                if(!tasks[i].isTaskComplete()){
+                    tasks[i]._taskComplete = true;
+                }
+                else{
+                    tasks[i]._taskComplete = false;
+                }
+                this.listTasks();
+            }
+        }
+    }
+
     listTasks(){
         const tasksTable = document.getElementById("tasksTable");
         tasksTable.innerHTML = "";
         for(let i = 0; i < this._userTasks.length; i++){
+            let isTaskComplete;
+            let taskStatus;
+            if(!this._userTasks[i].isTaskComplete()){
+                isTaskComplete = "Incomplete";
+                taskStatus = "taskIncomplete";
+            }
+            else{
+                isTaskComplete = "Complete";
+                taskStatus = "taskComplete";
+            }
             let newRow = tasksTable.insertRow(-1);
             let idCell = newRow.insertCell(0);
             let titleCell = newRow.insertCell(1);
@@ -93,7 +118,7 @@ class User{
             titleCell.innerHTML = this._userTasks[i].getTaskTitle();
             descriptionCell.innerHTML = this._userTasks[i].getTaskDescription();
             deadlineCell.innerHTML = this._userTasks[i].getTaskDeadline();
-            statusCell.innerHTML = this._userTasks[i].isTaskComplete();
+            statusCell.innerHTML = "<button class='actionButton " + taskStatus + "' id='taskStatusButton' onclick='user1.changeTaskStatus("+ this._userTasks[i].getTaskId() +")'>" + isTaskComplete + "</button>";
             actionsCell.innerHTML = "<button class='actionButton' id='editTaskButton' onclick='user1.editTask(" + this._userTasks[i].getTaskId() + ")'>Update</button><button class='actionButton' id='deleteTaskButton' onclick='user1.deleteTask(" + this._userTasks[i].getTaskId() + ")'>Delete</button>";
         }
     }

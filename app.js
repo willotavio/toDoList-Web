@@ -9,6 +9,6 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + 'index.html');
 });
 
-app.listen(8081, '192.168.1.102' || 'localhost', function(){
+app.listen(8081, '192.168.1.100' || 'localhost', function(){
     console.log("Connected!");
 });
